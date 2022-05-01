@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Method ONE : autowire by Name. Note name = "address" has to be same as name of reference being injected i.e. Address address -->
+	<!-- <bean class="com.dxc.autowire.Address" name = "address">
+		<property name ="street" value="Meera Road"/>
+		<property name = "city"  value="Mumbai"/>
+	</bean>
+	
+	<bean class = "com.dxc.autowire.Emp" name = "empobj" autowire="byName">
+		
+	</bean> -->
+	
+	<!-- Method TWO : autowire by Type  Name need not be the same-->
+	<!--  <bean class="com.dxc.autowire.Address" name = "addObj">
+		<property name ="street" value="Meera Road"/>
+		<property name = "city"  value="Mumbai"/>
+	</bean>
+	
+	<bean class = "com.dxc.autowire.Emp" name = "empobj" autowire="byType">
+		
+	</bean>  -->
+	
+	<context:annotation-config/>
+	
+	<bean class="com.dxc.autowire.annotation.Address" name = "addObj">
+		<property name ="street" value="Meera Road"/>
+		<property name = "city"  value="Mumbai"/>
+	</bean>
+	
+	<bean class="com.dxc.autowire.annotation.Address" name = "addObj2">
+		<property name ="street" value="Bahyandhar"/>
+		<property name = "city"  value="Mumbai"/>
+	</bean>
+	
+	<bean class = "com.dxc.autowire.annotation.Emp" name = "empobj">
+	</bean> 
+	
+</beans>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- STANDALONE LIST -->
+	<util:list list-class="java.util.LinkedList" id="syndicate">
+		<value>Mark</value>
+		<value>Jamil</value>
+		<value>Claire</value>
+		<value>Vicky</value>
+	</util:list>
+	
+	<!-- STANDALONE MAP -->
+	<util:map map-class="java.util.TreeMap" id="skillset">
+		<entry key="Mark" value="Physics,Maths,Guitar"/>
+		<entry key="Jamil" value="Painting,History,Archealogy"/>
+		<entry key="Claire" value="FilmMaking,Calligraphy,Photography"/>
+		<entry key="Vicky" value="FreeRunning,Coding,Game Design"/>	
+	</util:map>	
+	
+	
+	
+	<bean class ="com.dxc.standalonecollections.Pojo"
+	 name = "pojo1">
+	 <!-- <property name="members">
+	 	<ref bean="syndicate "/>
+	 </property> -->
+	 
+	 <property name="members" ref="syndicate"/>
+	 <property name="skills" ref="skillset"/>
+	</bean>
+	
+</beans>

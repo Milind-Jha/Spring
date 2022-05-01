@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.dxc.collections.Person" name = "person1">
+		<property name="name" value="Ashish"/>
+		<property name="phones">
+			<list>
+				<value>67627618</value>
+				<value>67627618</value>
+				<value>67627618</value>
+				<value>67627618</value>
+				<value>67627618</value>
+			</list>
+		</property>
+		
+		<property name="property">
+			<set>
+				<value>New delhi</value>
+				<value>Torronto</value>
+				<value>Moscow</value>
+				<value>Bejing</value>
+				<value>Taiwan</value>
+			</set>
+		</property>
+		
+		<property name="qualification">
+			<map>
+				<entry key = "B.E" value = "4"></entry>
+				<entry key = "12th" value = "2"></entry>
+				<entry key = "10th" value = "5"></entry>
+				<entry key = "5th" value = "5"></entry>
+			</map>
+		</property>	
+	</bean>
+</beans>
